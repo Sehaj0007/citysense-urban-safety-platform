@@ -18,7 +18,7 @@ A city-level safety awareness and prevention system where users can anonymously 
 - React (Vite)
 - Tailwind CSS
 - React Router DOM
-- React Map GL (Mapbox)
+- Maps: React Leaflet + OpenStreetMap (token-free, open-source)
 - React Hook Form
 - Chart.js
 - Axios
@@ -34,7 +34,6 @@ A city-level safety awareness and prevention system where users can anonymously 
 
 - Node.js (v14 or higher)
 - MongoDB (Local instance running on port 27017 or Atlas URI)
-- Mapbox API Token (Free tier available at mapbox.com)
 
 ## Installation
 
@@ -70,9 +69,7 @@ NODE_ENV=development
 ### Client
 Create a `.env` file in the `client` directory:
 ```env
-VITE_MAPBOX_TOKEN=your_mapbox_public_token_here
 ```
-*Note: You must provide a valid Mapbox token for the map to render correctly.*
 
 ## Running the Application
 

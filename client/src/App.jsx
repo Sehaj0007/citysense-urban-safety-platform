@@ -7,6 +7,7 @@ import MapPage from './pages/MapPage';
 import ReportIncident from './pages/ReportIncident';
 import UserDashboard from './pages/UserDashboard';
 import AdminDashboard from './pages/AdminDashboard';
+import IncidentDetail from './pages/IncidentDetail';
 import { AuthProvider } from './context/AuthContext';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
             <Route path="/map" element={<MapPage />} />
             <Route path="/report" element={<ReportIncident />} />
             <Route path="/dashboard" element={<UserDashboard />} />
+            <Route path="/incident/:id" element={<IncidentDetail />} />
             <Route path="/admin" element={<AdminDashboard />} />
           </Routes>
         </div>

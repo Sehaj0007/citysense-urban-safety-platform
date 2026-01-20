@@ -6,6 +6,7 @@ const {
   getIncidents,
   getNearbyIncidents,
   getMyIncidents,
+  getIncidentById,
 } = require('../controllers/incidentController');
 const { optionalAuth, protect } = require('../middleware/auth');
 
@@ -21,5 +22,6 @@ router.route('/')
 
 router.get('/nearby', getNearbyIncidents);
 router.get('/my', protect, getMyIncidents);
+router.get('/:id', getIncidentById);
 
 module.exports = router;

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import api from '../services/api';
 import {
   Chart as ChartJS,
@@ -22,6 +23,7 @@ ChartJS.register(
 );
 
 const AdminDashboard = () => {
+  const navigate = useNavigate();
   const [analytics, setAnalytics] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -106,7 +108,11 @@ const AdminDashboard = () => {
           </div>
           <ul className="divide-y divide-gray-200">
             {analytics.recentIncidents.map((incident) => (
-              <li key={incident._id} className="px-6 py-4">
+              <li 
+                key={incident._id} 
+                className="px-6 py-4 cursor-pointer hover:bg-gray-50 transition-colors duration-200"
+                onClick={() => navigate(`/incident/${incident._id}`)}
+              >
                 <div className="flex justify-between">
                   <div>
                     <p className="text-sm font-medium text-gray-900 capitalize">{incident.type.replace('_', ' ')}</p>

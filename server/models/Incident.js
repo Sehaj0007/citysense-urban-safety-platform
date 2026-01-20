@@ -9,7 +9,7 @@ const incidentSchema = mongoose.Schema({
   type: {
     type: String,
     required: true,
-    enum: ['harassment', 'theft', 'unsafe_lighting', 'stalking', 'assault', 'suspicious_activity', 'other'],
+    enum: ['harassment', 'theft', 'unsafe_lighting', 'stalking', 'assault', 'suspicious_activity', 'noise_complaint', 'vandalism', 'traffic_hazard', 'public_disturbance','other'],
   },
   description: {
     type: String,
