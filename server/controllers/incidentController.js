@@ -91,9 +91,24 @@ const getMyIncidents = asyncHandler(async (req, res) => {
   res.status(200).json(incidents);
 });
 
+// @desc    Get incident by ID
+// @route   GET /api/incidents/:id
+// @access  Public
+const getIncidentById = asyncHandler(async (req, res) => {
+  const incident = await Incident.findById(req.params.id).populate('user', 'name email phone');
+
+  if (!incident) {
+    res.status(404);
+    throw new Error('Incident not found');
+  }
+
+  res.status(200).json(incident);
+});
+
 module.exports = {
   createIncident,
   getIncidents,
   getNearbyIncidents,
   getMyIncidents,
+  getIncidentById,
 };
