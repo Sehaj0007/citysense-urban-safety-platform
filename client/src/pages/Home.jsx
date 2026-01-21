@@ -86,12 +86,19 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Wave Divider */}
-        <div className="absolute bottom-0 left-0 right-0">
-          <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto">
-            <path d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="rgb(248, 250, 252)"/>
-          </svg>
-        </div>
+        <svg
+          viewBox="0 0 1440 120"
+          preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="absolute bottom-0 left-0 right-0 w-full"
+          style={{ display: "block" }}
+        >
+          <path
+            d="M0,60 C360,0 720,120 1080,60 C1440,0 1440,0 1440,0 L1440,120 L0,120 Z"
+            fill="#FFFFFF"
+          />
+        </svg>
+
       </div>
 
       {/* Features Section */}
@@ -130,7 +137,7 @@ const Home = () => {
                 Report safety concerns without revealing your identity. Your privacy is our priority while helping others stay safe.
               </p>
               
-              <div className={`mt-4 flex items-center text-red-600 font-semibold transition-all duration-300 ${hoveredFeature === 1 ? 'translate-x-2' : ''}`}>
+              <div className={`mt-4 flex items-center text-red-600 font-semibold transition-all duration-300 ${hoveredFeature === 1 ? 'translate-x-2' : ''}`} onClick={() => navigate('/report')}>
                 Learn more
                 <ArrowRight className="ml-2 w-4 h-4" />
               </div>
@@ -161,7 +168,8 @@ const Home = () => {
                 Visualize high-risk areas and safe zones with our real-time city map powered by community data.
               </p>
               
-              <div className={`mt-4 flex items-center text-blue-600 font-semibold transition-all duration-300 ${hoveredFeature === 2 ? 'translate-x-2' : ''}`}>
+              <div className={`mt-4 flex items-center text-blue-600 font-semibold transition-all duration-300 ${hoveredFeature === 2 ? 'translate-x-2' : ''}`} onClick={() => navigate('/map')}
+              >
                 Learn more
                 <ArrowRight className="ml-2 w-4 h-4" />
               </div>
@@ -192,7 +200,8 @@ const Home = () => {
                 Get instant notifications when entering areas with recent safety reports. Stay informed, stay safe.
               </p>
               
-              <div className={`mt-4 flex items-center text-green-600 font-semibold transition-all duration-300 ${hoveredFeature === 3 ? 'translate-x-2' : ''}`}>
+              <div className={`mt-4 flex items-center text-green-600 font-semibold transition-all duration-300 ${hoveredFeature === 3 ? 'translate-x-2' : ''}`}onClick={() => navigate('')}
+              >
                 Learn more
                 <ArrowRight className="ml-2 w-4 h-4" />
               </div>
